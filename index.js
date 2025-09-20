@@ -50,3 +50,19 @@ function fibonacci(n){
 console.log("6:",fibonacci(2));
 
 // Question 7
+function factorial(j){
+    let result = 1;
+    for (let i = 1; i<= j; i++) result *= i;
+    return result;
+}
+console.log ("7:", factorial(7));
+
+// Question 8
+function removeDuplicate(array){
+    let unique = [];
+    for (let i = 0; i <array.length; i++){
+        if (unique.indexOf(array[i]) === -1) unique.push(array[i]);
+    }
+    return unique;
+}
+console.log("8:", removeDuplicate([5,7,4,7,2,1,3,8,3,8,5]));
