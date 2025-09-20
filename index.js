@@ -66,3 +66,92 @@ function removeDuplicate(array){
     return unique;
 }
 console.log("8:", removeDuplicate([5,7,4,7,2,1,3,8,3,8,5]));
+
+// Question 9
+function sumArray(arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) sum += arr[i];
+    return sum;
+}
+console.log("9:", sumArray([1,2,4,6]));
+
+// Question 10
+function sortArray(arr){
+    return arr.sort(function(a,b){ 
+        return a - b;});
+    }
+console.log("10:", sortArray([3,6,4,9,2,0]));
+
+// Question 11
+function stringLength(string){
+    return string.length;
+}
+console.log("11:", stringLength("LaibaArifSheikh"));
+
+// Question 12
+function toUpperCase(string){
+    return string.toUpperCase();
+}
+console.log("12:", toUpperCase("turkey"));
+
+// Question 13
+function capitalizeFirstLetter(string){
+    let words = string.split(" ");
+    for (let i = 0; i < words.length; i++){
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+    return words.join(" ");
+}
+console.log("13:", capitalizeFirstLetter("monkey"));
+
+// Question 14
+function mergeArrays(arr1, arr2){
+    return arr1.concat(arr2);
+}
+console.log("14:", mergeArrays([1,6],[4,7]));
+
+// Question 15
+function isPrime(num){
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) if (num % i === 0) return false;
+    return true;
+}
+console.log("15:", isPrime(11));
+
+// Question 16
+function countWords(string){
+    return string.trim().split(/\s+/).length;
+}
+console.log("16:", countWords("Hello Pakistan"));
+
+// Question 17
+function arrayContains(arrays, value){
+    return arrays.indexOf(value) !== -1;
+}
+console.log("17:", arrayContains([1,2,3],2));
+
+// Question 18
+function uniqueElements(array){
+    return removeDuplicate(array);
+}
+console.log("18:", uniqueElements([1,2,3,4,4,5,3,2]));
+
+// Question 19
+function flattenArray(array){
+    return array.flat ? array.flat(Infinity) : [].concat.apply([], array);
+}
+console.log("19:", flattenArray([1,[2,[3,4]]]));
+
+// Question 20
+function repeatString(string, times){
+    let result = "";
+    for (let i = 0; i < times; i++) result += string;
+    return result;
+}
+console.log("20:", repeatString("hi", 9));
+
+// Question 21
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log("21:", getRandomInt(1, 10));
