@@ -155,3 +155,57 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 console.log("21:", getRandomInt(1, 10));
+
+// Question 22
+function average(array){
+    return sumArray(array) / array.length;
+}
+console.log("22:", average([2,5,8]));
+
+// Question 23
+function removeSpace(string){
+    return string.replace(/\s+/g,"");
+}
+console.log("23:", removeSpace("l a i b a a r i f s h e i k h"));
+
+// Question 24
+function findMin(array){
+    let min = array[0];
+    for (let i = 1; i < array.length; i++) if (array[i] < min) min = array[i];
+    return min;
+}
+function difference(array){
+    let max = findMax(array)
+    let min = findMin(array);
+    return max - min;
+}
+console.log("24:", difference([3,7,2,9]));
+
+// Question 25
+function shuffledArray(array){
+    return array.sort(() => Math.random() - 0.5);
+}
+console.log("25:", shuffledArray([1,2,3,5,7,8]));
+
+// Question 26
+function longestWord(string){
+    let words = string.split(" ");
+    let longest = "";
+    for(let i = 0; i < words.length; i++) if (words[i].length > longest.length) longest = words[i];
+    return longest;
+}
+console.log("26:", longestWord("I love to do programming"));
+
+// Question 27
+function countDown(d){
+    for (let i = d; i >= 0; i--) console.log(i);
+}
+console.log("27:");
+countDown(6);
+
+// Question 28
+function firstNonRepeatingChar(string){
+    for (let i = 0; i < string.length; i++) if (string.indexOf(string[i]) === string.lastIndexOf(string[i])) return string[i];
+    return null;
+}
+console.log("28:", firstNonRepeatingChar("swiss"));
