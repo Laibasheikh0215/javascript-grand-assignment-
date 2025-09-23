@@ -209,3 +209,26 @@ function firstNonRepeatingChar(string){
     return null;
 }
 console.log("28:", firstNonRepeatingChar("swiss"));
+
+// Question 29
+function toTitleCase(string){
+    return string.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+}
+console.log("29:", toTitleCase("hello world from javascript"));
+
+// Question 30
+function removeElement(array,element){
+    return array.filter(item => item !== element);
+}
+console.log("30:", removeElement([1,2,3,2,4],2));
+
+// Question 31
+function swap(a,b){
+    console.log("Before Swap: , a,b");
+    let temp = a;
+    a = b;
+    b = temp;
+    console.log("After Swap:" , a, b);
+}
+console.log("31:");
+swap(5,10);
