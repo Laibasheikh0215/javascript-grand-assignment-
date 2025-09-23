@@ -232,3 +232,96 @@ function swap(a,b){
 }
 console.log("31:");
 swap(5,10);
+
+// Question 32
+function countOccurrences(array, value){
+    return array.reduce((count, item) => (item === value ? count + 1 : count), 0);
+}
+console.log("32:", countOccurrences([1,2,3,2,4,2,5],2));
+
+// Question 33
+function mostFrequent(array){
+    let frequent = {};
+    let maxCount = 0, mostFrequent;
+    for (let item of array){
+        frequent[item] = (frequent[item] || 0) + 1;
+        if (frequent[item] > maxCount) {
+            maxCount = frequent[item];
+            mostFrequent = item;
+        }
+    }
+    return mostFrequent;
+}
+console.log("33:", mostFrequent([1,3,2,3,4,3,5,2,2,2]));
+
+// Question 34
+function combineStrings(string1, string2){
+    return string1 + " " + string2;
+}
+console.log("34:", combineStrings("Hello", "World"));
+
+// Question 35
+function randomColor(){
+    let a = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let c = Math.floor(Math.random() * 256);
+    return `rgb(${a},${b},${c})`;
+}
+console.log("35:", randomColor());
+
+// Question 36
+function sumOfDigits(num){
+    return num.toString().split("").reduce((sum, j) => sum + Number(j), 0);
+}
+console.log("36:", sumOfDigits(12345));
+
+// Question 37
+function findIndex(array, value){
+    return array.indexOf(value);
+}
+console.log("37:", findIndex ([10,20,30,40], 30));
+
+// Question 38
+function shuffleString(string){
+    return string.split("").sort(() => Math.random() - 0.5).join("");
+}
+console.log("38:", shuffleString("abcdefgh"));
+
+// Question 39
+function secondLargest(array){
+    let unique = [...new Set(array)];
+    unique.sort((a,b) => b - a);
+    return unique[1];
+}
+console.log("39:", secondLargest([10,20,30,40,30]));
+
+// Question 40
+function stringToArray(string){
+    return string.split(" ");
+}
+console.log("40:", stringToArray("JavaScript is fun"));
+
+// Question 41
+function mergeSortedArrays(array1, array2){
+    return [...array1, ...array2].sort((a,b) => a - b);
+}
+
+console.log("41:", mergeSortedArrays([1,3,5], [2,4,6]));
+
+// Question 42
+function sumPositiveNumbers(array){
+    return array.filter(n => n > 0). reduce((sum, n) => sum + n, 0);
+}
+console.log("42:", sumPositiveNumbers([-1,2,4,6,-3,-7]));
+
+// Question 43
+function extractDomain(url){
+    return url.split("//")[1].split("/")[0];
+}
+console.log("43:", extractDomain("https://github.com/Laibasheikh0215"));
+
+// Question 44
+function sumEvenNumbers(array) {
+    return array.filter(n => n % 2 === 0).reduce((sum, n) => sum + n, 0);
+}
+console.log("44:", sumEvenNumbers([1,2,3,4,5,6,7,8,9]));
