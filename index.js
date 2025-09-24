@@ -325,3 +325,309 @@ function sumEvenNumbers(array) {
     return array.filter(n => n % 2 === 0).reduce((sum, n) => sum + n, 0);
 }
 console.log("44:", sumEvenNumbers([1,2,3,4,5,6,7,8,9]));
+
+// Question 45
+function getDayOfWeek(dateString){
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let date = new Date(dateString);
+  return days[date.getDay()];
+}
+console.log("45:", getDayOfWeek("2025-09-21"));
+
+// Question 46
+function largestEvenNumber(arr) {
+  let evens = arr.filter(n => n % 2 === 0);
+  return evens.length ? Math.max(...evens) : null;
+}
+console.log("46:", largestEvenNumber([5, 12, 7, 20, 9]));
+
+// Question 47
+function mergeObjects(obj1, obj2) {
+  return { ...obj1, ...obj2 };
+}
+console.log("47:", mergeObjects({a:1, b:2}, {b:3, c:4}));
+
+// Question 48
+function capitalizeFirstLetter(str) {
+  return str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+}
+console.log("48:", capitalizeFirstLetter("javascript is fun"));
+
+// Question 49
+function randomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log("49:", randomInteger(1, 10));
+
+// Question 50
+function uniqueArray(arr) {
+  return [...new Set(arr)];
+}
+console.log("50:", uniqueArray([1,2,2,3,4,4,5]));
+
+// Question 51
+function isAnagram(str1, str2) {
+  let format = s => s.toLowerCase().split("").sort().join("");
+  return format(str1) === format(str2);
+}
+console.log("51:", isAnagram("listen", "silent"));
+console.log("51:", isAnagram("hello", "world"));
+
+// Question 52
+function removeVowels(str) {
+  return str.replace(/[aeiouAEIOU]/g, "");
+}
+console.log("52:", removeVowels("Beautiful Day"));
+
+// Question 53
+function getAge(birthYear) {
+  let currentYear = new Date().getFullYear();
+  return currentYear - birthYear;
+}
+console.log("53:", getAge(2010));
+
+// Question 54
+function findMissingNumber(arr) {
+  let n = arr.length + 1;
+  let expectedSum = (n * (n + 1)) / 2;
+  let actualSum = arr.reduce((sum, num) => sum + num, 0);
+  return expectedSum - actualSum;
+}
+console.log("54:", findMissingNumber([1,2,3,5]));
+
+// Question 55
+function countUppercase(str) {
+  return (str.match(/[A-Z]/g) || []).length;
+}
+console.log("55:", countUppercase("Hello World JS"));
+
+// Question 56
+function validateEmail(email) {
+  let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(email);
+}
+console.log("56:", validateEmail("test@example.com"));
+console.log("56:", validateEmail("invalid-email"));
+
+// Question 57
+let navbarVisible = false;
+function toggleNavbar() {
+  navbarVisible = !navbarVisible;
+  return navbarVisible ? "Navbar Shown" : "Navbar Hidden";
+}
+console.log("57:", toggleNavbar());
+console.log("57:", toggleNavbar());
+
+// Question 58
+function submitForm(form) {
+  for (let key in form) {
+    if (form[key] === "") return "Form not valid!";
+  }
+  return "Form submitted!";
+}
+console.log("58:", submitForm({name:"Laiba", email:"labii@example.com"}));
+console.log("58:", submitForm({name:"", email:"labii@example.com"}));
+
+// Question 59
+let cart = [];
+function addToCart(item) {
+  cart.push(item);
+  return `Item added. Cart count: ${cart.length}`;
+}
+console.log("59:", addToCart("Apple, Mango, Grape"));
+console.log("59:", addToCart("Banana"));
+
+// Question 60
+function searchProducts(products, query) {
+  return products.filter(p => p.toLowerCase().includes(query.toLowerCase()));
+}
+console.log("60:", searchProducts(["Apple", "Banana", "Mango"], "an"));
+
+// Question 61
+function sortByPrice(products) {
+  return products.sort((a, b) => a.price - b.price);
+}
+console.log("61:", sortByPrice([{name:"Shirt", price:30}, {name:"Shoe", price:20}, {name:"Hat", price:25}]));
+
+// Question 62
+function highlightText(text, keyword) {
+  let regex = new RegExp(`(${keyword})`, "gi");
+  return text.replace(regex, "**$1**");
+}
+console.log("62:", highlightText("JavaScript is fun and JavaScript is powerful", "javascript"));
+
+// Question 63
+function validatePassword(password) {
+  let pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{8,}$/;
+  return pattern.test(password);
+}
+console.log("63:", validatePassword("StrongP@ss1"));
+console.log("63:", validatePassword("weakpass"));
+
+// Question 64
+function scrollToTop() {
+  return "Page scrolled to top!";
+}
+console.log("64:", scrollToTop());
+
+// Question 65
+function updateProfilePicture(fileName) {
+  return `Profile picture updated to ${fileName}`;
+}
+console.log("65:", updateProfilePicture("profile.jpg"));
+
+//  Question 66
+function validatePhoneNumber(phone) {
+  let pattern = /^\+?[0-9]{10,13}$/;
+  return pattern.test(phone);
+}
+console.log("66:", validatePhoneNumber("+923001234567"));
+console.log("66:", validatePhoneNumber("12345"));
+
+//  Question 67
+function getCurrentDateTime() {
+  let now = new Date();
+  return now.toISOString().replace("T", " ").split(".")[0];
+}
+console.log("67:", getCurrentDateTime());
+
+//  Question 68
+function generateRandomPassword(length) {
+  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+}
+console.log("68:", generateRandomPassword(10));
+
+//  Question 69
+function rotateArray(arr, steps) {
+  steps = steps % arr.length;
+  return arr.slice(-steps).concat(arr.slice(0, -steps));
+}
+console.log("69:", rotateArray([1, 2, 3, 4, 5], 2));
+
+//  Question 70
+function comparePasswords(p1, p2) {
+  return p1 === p2;
+}
+console.log("70:", comparePasswords("mypassword", "mypassword"));
+console.log("70:", comparePasswords("mypassword", "otherpass"));
+
+//  Question 71
+function isAdult(age) {
+  return age >= 18;
+}
+console.log("71:", isAdult(20));
+console.log("71:", isAdult(15));
+
+//  Question 72
+function concatStrings(str1, str2) {
+  return str1 + str2;
+}
+console.log("72:", concatStrings("Hello", "World"));
+
+//  Question 73
+function greetUser(name) {
+  return `Hello, ${name}!`;
+}
+console.log("73:", greetUser("Laiba"));
+
+//  Question 74
+function squareNumber(num) {
+  return num * num;
+}
+console.log("74:", squareNumber(7));
+
+//  Question 75
+function countChars(str) {
+  return str.length;
+}
+console.log("75:", countChars("JavaScript"));
+
+//  Question 76
+function isString(input) {
+  return typeof input === "string";
+}
+console.log("76:", isString("Hello"));
+console.log("76:", isString(123));
+
+//  Question 77
+function findMin(arr) {
+  return Math.min(...arr);
+}
+console.log("77:", findMin([10, 5, 20, 3, 7]));
+
+//  Question 78
+function splitString(str) {
+  return str.split("");
+}
+console.log("78:", splitString("JavaScript"));
+
+//  Question 79
+function removeLastElement(arr) {
+  return arr.slice(0, -1);
+}
+console.log("79:", removeLastElement([1, 2, 3, 4, 5]));
+
+//  Question 80
+function toggleCase(str) {
+  return str.split("").map(ch => 
+    ch === ch.toUpperCase() ? ch.toLowerCase() : ch.toUpperCase()
+  ).join("");
+}
+console.log("80:", toggleCase("HeLLo WoRLd"));
+
+//  Question 81
+function countConsonants(str) {
+  return (str.match(/[^aeiou\s\d\W]/gi) || []).length;
+}
+console.log("81:", countConsonants("Hello World"));
+
+//  Question 82
+function removeWhitespace(str) {
+  return str.trim();
+}
+console.log("82:", removeWhitespace("   JavaScript   "));
+
+//  Question 83
+function highlightSubstring(str, sub) {
+  let regex = new RegExp(sub, "gi");
+  return str.replace(regex, "**" + sub + "**");
+}
+console.log("83:", highlightSubstring("I love JavaScript and JavaScript is fun", "JavaScript"));
+
+//  Question 84
+function formatCurrency(num) {
+  return "$" + num.toFixed(2);
+}
+console.log("84:", formatCurrency(1234.5));
+
+//  Question 85
+function getElementById(id) {
+  return `Element with ID '${id}' selected`; // simple simulation
+}
+console.log("85:", getElementById("header"));
+
+//  Question 86
+function formatDate(date) {
+  let year = date.getFullYear();
+  let month = String(date.getMonth() + 1).padStart(2, "0");
+  let day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+console.log("86:", formatDate(new Date("2025-09-21")));
+
+// Question 87
+function resizeElement(elementId, width, height) {
+  return `Element '${elementId}' resized to ${width}x${height}`;
+}
+console.log("87:", resizeElement("box1", 200, 150));
+
+// Question 88
+function flattenArray(arr) {
+  return arr.flat(Infinity);
+}
+console.log("88:", flattenArray([1, [2, [3, [4, 5]]]]));
